@@ -1,0 +1,265 @@
+<div *ngIf="loader.isLoading | async">
+    <mat-progress-bar
+    mode="indeterminate"
+    class="loader-container"
+  ></mat-progress-bar>
+</div>
+
+<!-- <div class="jumbotron">
+  <div class="content flex-card">
+    <div *ngFor="let cartitem of cartdata; let i = index">
+      <span style="float: left"> Total MRP:</span>
+      <span
+        style="
+          float: right;
+          font-size: 15px;
+
+          color: rgb(0, 0, 0);
+        "
+        >Delivery date...</span
+      >
+    </div>
+
+    <p style="color: wheat"></p>
+    <p style="font-size: 9px">**Free Deliver For Order Above $50.00</p>
+    <br />
+  </div>
+</div> -->
+
+<div class="jumbotron">
+  <div class="flex-container">
+    <div
+      *ngFor="let cartitem of cartdata; let i = index"
+      class="content cart-card"
+      (click)="prodDetails(cartitem[0], $event)"
+    >
+      <div class="content cart-card">
+        <div
+          style="
+            font-size: 15px;
+            line-height: 1.3;
+            font-weight: 500;
+            color: rgb(39, 38, 38);
+            padding: 2px;
+            text-align: left;
+          "
+        >
+          <p>
+            <b> {{ cartitem[0].productname }} </b>
+          </p>
+
+          <p *ngIf="cartitem[0].onoffer">
+            <b style="color: blue"
+              >{{ cartitem[0].offerpercentage / 100 | percent }} Off</b
+            >
+          </p>
+          <!-- <span style="float: right; font-size: 14px; word-break: break-all"
+            >Delivery date ...</span> -->
+        </div>
+
+        <!-- product-container code -->
+
+        <div class="cart-card-content">
+          <div class="product-container">
+            <span style="float: left">
+              <img
+                width="50px"
+                height="50px"
+                [src]="cartitem[0].imageurl"
+                alt="product image"
+                class="prodHalfImage"
+              />
+            </span>
+          </div>
+          <div class="product-container">
+            <p>
+              <del>
+                {{ cartitem[0].mrp | currency : "USD" : "symbol" }}
+              </del>
+            </p>
+            <p>
+              {{ cartitem[0].currentprice | currency : "USD" : "symbol" }}
+            </p>
+
+            <br />
+            <p>{{ cartitem[0].mfgname }}</p>
+
+            <br />
+            <p style="font-weight: bolder">
+              {{ cartitem[0].cart_line_total | currency : "USD" : "symbol" }}
+            </p>
+          </div>
+        </div>
+
+        <!-- end of product-container code -->
+      </div>
+
+      <br />
+      <div class="content cart-card">
+        <div
+          style="
+            font-size: 18px;
+            line-height: 1.8;
+            font-weight: 500;
+            color: rgb(39, 38, 38);
+            padding: 2px;
+            text-align: center;
+          "
+        >
+          <span style="float: left">
+            <div class="btnUpDn">
+              <img
+                id="plusimg"
+                src="../../../../../../assets/icons/plusCircle.png"
+                style="width: 25px; height: 25px"
+                (click)="addQty(cartitem, $event)"
+              />
+              <button
+                fill="clear"
+                style="width: 35px; height: 23px; font-size: 12px"
+              >
+                {{ cartitem[0].cart_product_qty }}
+              </button>
+
+              <img
+                id="minusimg"
+                src="../../../../../../assets/icons/minusCircle2.png"
+                routerLink="loginoptions"
+                style="width: 25px; height: 25px"
+                (click)="decreaseQty(cartitem, $event)"
+              />
+            </div>
+          </span>
+        </div>
+      </div>
+      <!-- end of roduct-container code -->
+      <div align="end">
+        <button
+          cdkFocusInitial
+          *ngIf="this.cartArray.length! > 0"
+          class="btn-submitFIT"
+          style="margin: 10px 5px 10px 5px"
+          (click)="save4later(cartitem, $event)"
+        >
+          Save For Later
+        </button>
+        <button
+          *ngIf="this.cartArray.length! < 0"
+          (click)="move2cart(cartitem[0])"
+        >
+          MoveToCart
+        </button>
+
+        <button
+          class="btn-submitFIT"
+          style="background-color: rgb(165, 43, 22); border: none; color: white"
+          (click)="delItem(cartitem, $event)"
+        >
+          Remove Item
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div *ngIf="loader.isLoading | async">
+    <mat-progress-bar
+    mode="indeterminate"
+    class="loader-container"
+  ></mat-progress-bar>
+</div>
+<div class="jumbotron">
+  <div *ngIf="loader.isLoading | async">
+      <mat-progress-bar
+      mode="indeterminate"
+      class="loader-container"
+    ></mat-progress-bar>
+  </div>
+  <div class="flex-container">
+    <div
+      *ngFor="let cartitem of cartdata; let i = index"
+      class="flex-item flex-card"
+    >
+      <div class="container">
+        <div class="flex-card-header">
+          {{ cartitem[0].productname }}
+        </div>
+        <div class="flex-card-content">
+          <div style="width: 60%">
+            <img
+              width="50px"
+              height="50px"
+              [src]="cartitem[0].imageurl"
+              alt="product image"
+              class="prodHalfImage"
+            />
+          </div>
+
+          <div style="width: 40%">
+            <p *ngIf="cartitem[0].onoffer">
+              <b style="font-size: 12px; font-weight: bolder; color: blue"
+                >{{ cartitem[0].offerpercentage / 100 | percent }} Off</b
+              >
+            </p>
+
+            <br />
+            <p style="font-size: 12px">
+              <del>
+                {{ cartitem[0].mrp | currency : "USD" : "symbol" }}
+              </del>
+            </p>
+            <p style="font-size: 12px">
+              {{ cartitem[0].currentprice | currency : "USD" : "symbol" }}
+            </p>
+
+            <br />
+            {{ cartitem[0].mfgname }}
+            <br />
+            {{ cartitem[0].cart_line_total | currency : "USD" : "symbol" }}
+          </div>
+        </div>
+        <br />
+        <mat-card-footer>
+          <div style="width: 50%; display: flex; align-items: flex-start">
+            <button
+              class="btn-submitFIT"
+              (click)="save4later(cartitem[0])"
+              *ngIf="this.cartlist.length! > 0"
+            >
+              Save For Later
+            </button>
+
+            <button
+              class="btn-submitFIT"
+              (click)="move2cart(cartitem[0])"
+              *ngIf="this.cartlist.length! < 0"
+            >
+              MoveToCart
+            </button>
+          </div>
+
+          <div style="width: 50%">
+            <div class="btnUpDn">
+              <img
+                id="plusimg"
+                src="../../../../../../assets/icons/plusCircle.png"
+                style="width: 25px; height: 25px"
+                (click)="addQty(cartitem)"
+              />
+              <button fill="clear" style="width: 35px; height: 23px">
+                {{ cartitem[0].cart_product_qty }}
+              </button>
+
+              <img
+                id="plusimg"
+                src="../../../../../../assets/icons/minusCircle2.png"
+                routerLink="loginoptions"
+                style="width: 25px; height: 25px"
+              />
+            </div>
+          </div>
+        </mat-card-footer>
+      </div>
+    </div>
+  </div>
+</div> -->

@@ -1,0 +1,58 @@
+<!-- <div class="jumbotronHeader" *ngIf="gymname; else nogymname"> -->
+<div class="container" style="margin-bottom: 20%">
+  <div class="jumbotronHeader" *ngIf="gymname">
+    <div class="centerContent">Welcome To {{ gymname }}</div>
+  </div>
+
+  <div class="jumbotron" *ngIf="gymname">
+    <a class="centerContent">
+      <img
+        class="responsive"
+        src="../assets/images/flightsbanner.gif"
+        alt="image"
+        width="350"
+        height="250"
+        priority
+      />
+      &nbsp;
+      <h4>A healthy body is a healthy you</h4>
+    </a>
+    <br />
+
+    <a class="centerContent">
+      <h2>Our Services</h2>
+      <img
+        class="responsive"
+        src="../assets/images/flightsbanner.gif"
+        alt="image"
+        width="350"
+        height="250"
+        priority
+      />
+      &nbsp;
+    </a>
+
+    <br />
+
+    <a class="centerContent">
+      <h2>Our Producs</h2>
+      <img
+        class="responsive"
+        src="../assets/images/flightsbanner.gif"
+        alt="image"
+        width="350"
+        height="250"
+        priority
+      />
+      &nbsp;
+    </a>
+  </div>
+</div>
+<!-- <ng-template #nogymname>
+  <div
+    class="card centerContent"
+    style="margin-top: 125px; color: rgb(255, 72, 0)"
+  >
+    Required Information Not Found! Please Login
+  </div>
+</ng-template> -->

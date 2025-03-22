@@ -1,0 +1,118 @@
+<div>
+  @for(deliveryitem of deliveryaddresses;track deliveryitem; let i=$index ) {
+  @if(loader.isLoading | async) {
+  <div>
+      <mat-progress-bar
+      mode="indeterminate"
+      class="loader-container"
+    ></mat-progress-bar>
+  </div>
+  <mat-card
+    appearance="outlined"
+    style="
+      background-color: transparent;
+      color: white;
+      border-color: rgb(218, 216, 216);
+    "
+    ><mat-card-title> Delivery Addresses </mat-card-title>
+  </mat-card>
+
+  }
+  <div class="addressClass">
+    <div>
+      <span style="float: left"
+        ><mat-card-title>
+          {{ deliveryitem.del_addr_type }}
+        </mat-card-title>
+      </span>
+      <span style="float: right">
+        <button
+          class="btn-submitFIT"
+          (click)="editDeliveryAddress(deliveryitem.del_addr_id)"
+        >
+          Edit
+        </button></span
+      >
+    </div>
+    <br />
+    <br />
+    <div class="addressClass">
+      <!-- Registered Mobile: {{ deliveryitem.reg_mobileno }}
+      <br /> -->
+      {{ deliveryitem.del_addr_area_street }},
+
+      <br />
+      {{ deliveryitem.del_addr_landmark }},
+      <br />
+      {{ deliveryitem.del_addr_city_dist }},
+      <br />
+      {{ deliveryitem.del_addr_state }} - {{ deliveryitem.del_addr_pincode }},
+      <br />
+      {{ deliveryitem.del_addr_country }}
+    </div>
+
+    <br />
+    <button
+      class="btn-submitFIT"
+      style="
+        background-color: rgb(126, 48, 48);
+        padding: 8px;
+        color: white;
+        font-size: 11px;
+        margin-left: 5px;
+        width: fit-content;
+        padding: 10px;
+      "
+      (click)="addressSelected(deliveryitem.del_addr_type)"
+    >
+      Use this Address
+    </button>
+    <br />
+    <br />
+    <hr style="width: 50%; margin-left: auto; margin-right: auto" />
+    <br />
+  </div>
+  }
+  <button
+    class="btn-submitFIT"
+    style="
+      width: fit-content;
+      padding: 10px;
+      background-color: white;
+      color: black;
+    "
+    (click)="addNewAddress()"
+  >
+    Add new delivery address
+  </button>
+</div>
+<!--@for(item of deliveryaddresses;track item; let i=$index ) { @if(loader.isLoading
+| async) {
+<div>
+    <mat-progress-bar
+    mode="indeterminate"
+    class="loader-container"
+  ></mat-progress-bar>
+</div>
+ <mat-card
+  appearance="outlined"
+  style="
+    background-color: transparent;
+    color: white;
+    border-color: rgb(218, 216, 216);
+  "
+  ><mat-card-title> Delivery Addresses </mat-card-title>
+</mat-card> 
+<div class="addressClass" style="float: left">
+  Registered Mobile: <b style="font-size: 18px"> {{ item.address_type }}</b>
+  <br />
+  {{ item.area_street }}, {{ item.landmark }},
+  <br />
+  {{ item.city_dist }},
+  <br />
+  {{ item.state }} - {{ item.pincode }},
+  <br />
+  {{ item.country }}
+  <br />
+</div>
+} }-->

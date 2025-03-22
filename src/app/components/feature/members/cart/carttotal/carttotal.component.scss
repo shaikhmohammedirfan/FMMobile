@@ -1,0 +1,39 @@
+.jumbotronFooter {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 330px;
+  min-height: 330px;
+  margin-bottom: 10px;
+}
+
+.content {
+  justify-items: left;
+  padding-top: 5px;
+  font-size: 15px;
+}
+
+.flex-card {
+  width: 30%;
+  height: 250px;
+  display: flex;
+
+  vertical-align: middle;
+  line-height: 2;
+}
+
+.BWButton,
+.WhiteBtn {
+  min-width: 170px;
+  min-height: 30px;
+}
+
+.pageTitle {
+  font-size: 22px;
+}
+
+@media screen and (max-width: 700px) {
+  .flex-card {
+    width: 80%;
+  }
+}

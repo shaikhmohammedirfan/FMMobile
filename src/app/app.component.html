@@ -1,0 +1,122 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #homesidenav>
+    <mat-toolbar>Menu</mat-toolbar>
+    <br />
+
+    <section style="margin-left: 20px">
+      <button
+        mat-button
+        class="menu-button"
+        *ngFor="let item of appPages"
+        (click)="homesidenav.toggle()"
+      >
+        <div routerLink="{{ item.url }}" style="margin-top: 15px">
+          <img id="frontarrowimg" src="../assets/icons/frontarrow.png" />
+          <span style="margin-left: 5px">{{ item.title }}</span>
+        </div>
+      </button>
+    </section>
+    <br />
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- Top toolbar at the top of every page -->
+    <mat-toolbar class="navbar">
+      <mat-toolbar-row class="flex-container">
+        <img
+          id="logoimg"
+          ngSrc="fmLogo2.png"
+          width="34"
+          height="31"
+          routerLink="/"
+        />
+        <span class="pageTitle" routerLink="/">FitnessMantra</span>
+      </mat-toolbar-row>
+      <mat-toolbar-row>
+        <span
+          ><img
+            id="menuimg"
+            (click)="homesidenav.toggle()"
+            src="../assets/icons/menu.png"
+        /></span>
+        <span class="example-spacer"></span>
+
+        <span *ngIf="!currUserName">
+          <img
+            id="userimg"
+            src="../assets/icons/user.png"
+            routerLink="loginoptions"
+          />
+        </span>
+
+        <span *ngIf="currUserName" style="font-size: 12px">
+          {{ currUserName }}
+        </span>
+      </mat-toolbar-row>
+      <!-- <img
+        id="menuimg"
+        (click)="homesidenav.toggle()"
+        src="../assets/icons/menu.png"
+      /> -->
+
+      <!-- full path of image file is defined in module file under provider  -->
+      <!-- <img
+        id="logoimg"
+        ngSrc="fmLogo2.png"
+        width="54"
+        height="41"
+        disableOptimizedSrcset
+        routerLink="/"
+        style="margin-left: 10px"
+      />
+      <span style="margin-top: 20px">FitnessMantra</span>
+
+      <span class="example-spacer"></span> -->
+
+      <!-- company name in the middle -->
+      <!-- <h1>eStudent</h1> -->
+
+      <!-- <span class="example-spacer"></span>
+      <button
+        aria-label="Login icon"
+        routerLink="loginoptions"
+        class="toolbarBtns"
+      >
+        <img
+          id="userimg"
+          src="../assets/icons/user.png"
+          routerLink="loginoptions"
+        />{{ currUserName }}
+      </button>
+      <span></span>-->
+    </mat-toolbar>
+
+    <!-- Footer at the bottom of every page -->
+    <footer contentEditable id="footer">
+      <div class="footerContainer">
+        <div class="footerTab" id="homeTab" routerLink="">
+          <p routerLink="">Home</p>
+        </div>
+        <div class="footerTab" id="producttTab" routerLink="/allCategories">
+          <p routerLink="/allCategories">Categories</p>
+        </div>
+
+        <div class="footerTab" id="accountTab" routerLink="/account">
+          <p routerLink="/account">Account</p>
+        </div>
+        <div routerLink="/cart" class="footerTab" id="cartTab">
+          <p routerLink="/cart">
+            <span
+              matBadge="{{ this.auth.totalcartitems.value }}"
+              matBadgeOverlap="false"
+              class="demo-section"
+            >
+              <img width="30%" src="../assets/icons/cartWhite.png" />
+            </span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

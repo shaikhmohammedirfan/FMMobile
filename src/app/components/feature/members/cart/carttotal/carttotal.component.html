@@ -1,0 +1,78 @@
+<div class="jumbotronFooter">
+  <p class="pageTitle">Payment Details:</p>
+
+  <div *ngIf="loader.isLoading | async">
+      <mat-progress-bar
+      mode="indeterminate"
+      class="loader-container"
+    ></mat-progress-bar>
+  </div>
+
+  <div class="content flex-card">
+    <div>
+      <span style="float: left">Total MRP:</span>
+      <span
+        style="
+          float: right;
+          font-size: 15px;
+          text-decoration: line-through;
+          color: rgb(228, 225, 225);
+        "
+        >{{ mrptotal | currency }}</span
+      >
+    </div>
+    <div>
+      <span style="float: left">Discounts:</span>
+      <span style="float: right"> {{ discounttotal | currency }}</span>
+    </div>
+
+    <div>
+      <span style="float: left">Delevery Fee:</span>
+      <span
+        style="
+          float: right;
+          font-size: 15px;
+          font-weight: bold;
+          color: rgb(221, 221, 221);
+        "
+      >
+        {{ deleveryfee | currency }}</span
+      >
+    </div>
+
+    <div>
+      <span style="float: left">Total Amount:</span>
+      <span
+        style="
+          float: right;
+          font-size: 18px;
+          font-weight: bold;
+          color: rgb(255, 255, 255) !important;
+        "
+      >
+        {{ netamount | currency }}</span
+      >
+    </div>
+
+    <div>
+      <span style="float: left">You Saved:</span>
+      <span
+        style="
+          float: right;
+          font-size: 15px;
+          font-weight: bold;
+          color: rgb(189, 187, 187) !important;
+        "
+      >
+        {{ savingtotal | currency }}</span
+      >
+    </div>
+
+    <p style="color: wheat"></p>
+    <p style="font-size: 9px">
+      <mat-hint> **Free Deliver For Order Above $50.00 </mat-hint>
+
+      <br />
+    </p>
+  </div>
+</div>

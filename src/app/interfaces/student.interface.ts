@@ -1,0 +1,29 @@
+export interface student {
+  id: string;
+  studentid: string;
+  fname: string;
+  mname: string;
+  lname: string;
+  dob: string;
+  fathersname: string;
+  mothersname: string;
+  guardiansname: string;
+  telephoneno: string;
+  validmobile1: string;
+  validmobile2: string;
+  validemail1: string;
+  validemail2: string;
+  address: string;
+  admissiondate: string;
+  admittedtoclass: string;
+  boardname: string;
+  currentclass: string;
+  tcissueddate: string;
+  schoolcode: string;
+  last_modified: string;
+  modified_by: string;
+  studentactive: boolean;
+  classdivision: string;
+  guardian_id: string;
+  guardian_relationship: string;
+}

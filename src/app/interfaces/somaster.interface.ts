@@ -1,0 +1,31 @@
+export interface so_mstInterface {
+  order_id: string;
+  customer_id: string;
+  reg_mobileno: string;
+  reg_alternatephone: string;
+  reg_email: string;
+  order_amount: number;
+  order_status: string;
+  payment_method: string;
+  del_add_id: string;
+  del_add_type: string;
+  del_add_name: string;
+  del_add_area_street: string;
+  del_add_landmark: string;
+  del_add_city_dist: string;
+  del_add_state: string;
+  del_add_pincode: string;
+  del_add_country: string;
+  bill_add_type: string;
+  bill_add_name: string;
+  bill_add_area_street: string;
+  bill_add_landmark: string;
+  bill_add_city_dist: string;
+  bill_add_state: string;
+  bill_add_pincode: string;
+  bill_add_country: string;
+  total_item_delivered: number;
+  order_confirm_date: Date;
+  order_shipped_date: Date;
+  order_delivered_date: Date;
+}

@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <div style="align-items: end">
+    <button
+      class="closeBtnRight"
+      mat-button
+      matTooltip="Close"
+      mat-dialog-close
+      (click)="closeForm($event)"
+    >
+      X
+    </button>
+  </div>
+  <br />
+  <p style="text-align: center; font-size: 18px; font-weight: bold">
+    {{ selectedproduct.productname }}
+  </p>
+  <p>{{ quantity() }}</p>
+  <img [src]="selectedproduct.imageurl" alt="" width="60%" height="40%" />
+</div>

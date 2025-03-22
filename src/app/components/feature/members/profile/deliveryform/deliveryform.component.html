@@ -1,0 +1,162 @@
+<div class="jumbotron">
+  <div style="align-items: end">
+    <button
+      class="closeBtnRight"
+      mat-button
+      matTooltip="Close"
+      mat-dialog-close
+      (click)="closeForm($event)"
+    >
+      X
+    </button>
+  </div>
+  <br />
+  <div class="pageTitle">Delivery Address</div>
+  <br />
+
+  <form
+    [formGroup]="deliveryform"
+    (ngSubmit)="saveDeliveryAddress(this.deliveryform.value)"
+  >
+    <div class="flex-container">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Address Type</mat-label>
+          <input
+            #address_type
+            matInput
+            placeholder="*Address Type"
+            formControlName="address_type"
+          />
+
+          <mat-error>
+            @if
+            (this.deliveryform.controls['address_type']!.errors?.['required']) {
+            Required field! Cannot be null/blank.}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Area/Street</mat-label>
+          <input
+            #area_street
+            matInput
+            placeholder="*Area/Street"
+            formControlName="area_street"
+          />
+
+          <mat-error>
+            @if
+            (this.deliveryform.controls['area_street']!.errors?.['required']) {
+            Required field! Cannot be null/blank.}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Landmark</mat-label>
+          <input
+            #landmark
+            matInput
+            placeholder="landmark"
+            formControlName="landmark"
+          />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>City/District</mat-label>
+          <input
+            #city_dist
+            matInput
+            placeholder="*City/District"
+            formControlName="city_dist"
+          />
+
+          <mat-error>
+            @if (this.deliveryform.controls['city_dist']!.errors?.['required'])
+            { Required field! Cannot be null/blank.}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>State</mat-label>
+          <input #state matInput placeholder="*State" formControlName="state" />
+
+          <mat-error>
+            @if (this.deliveryform.controls['state']!.errors?.['required']) {
+            Required field! Cannot be null/blank.}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>PIN Code</mat-label>
+          <input
+            #pincode
+            matInput
+            placeholder="*PIN Code"
+            formControlName="pincode"
+          />
+
+          <mat-error>
+            @if (this.deliveryform.controls['pincode']!.errors?.['required']) {
+            Required field! Cannot be null/blank.}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Country</mat-label>
+          <input
+            #country
+            matInput
+            placeholder="*Country"
+            formControlName="country"
+          />
+
+          <mat-error>
+            @if (this.deliveryform.controls['country']!.errors?.['required']) {
+            Required field! Cannot be null/blank.}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <!-- List of item field get value from del_addr_type field  -->
+        <mat-form-field appearance="outline">
+          <mat-label>Default Delivery Address</mat-label>
+          <input
+            #default_del_address
+            matInput
+            placeholder="*default_del_address"
+            formControlName="default_del_address"
+          />
+
+          <mat-error>
+            @if
+            (this.deliveryform.controls['default_del_address']!.errors?.['required'])
+            { Required field! Cannot be null/blank.}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div style="text-align: center; padding: 1%; margin-bottom: 20%">
+      <button
+        mat-flat-button
+        class="btn-submitFIT"
+        (click)="saveDeliveryAddress(this.deliveryform.value)"
+      >
+        Submit
+      </button>
+      <!-- [disabled]="!this.studentform.valid" -->
+    </div>
+  </form>
+</div>

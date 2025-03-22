@@ -1,0 +1,74 @@
+.loader-container {
+  position: fixed;
+  width: 50%;
+  z-index: 99;
+}
+
+h2 {
+  background-color: rgb(32, 32, 32);
+  color: rgb(255, 255, 255);
+  height: 40px;
+  margin-top: 45px;
+  padding: 10px;
+  font-weight: 300;
+  text-align: center;
+  vertical-align: middle;
+}
+
+mat-toolbar {
+  background-color: #33363b;
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 15px;
+}
+
+mat-form-field {
+  color: rgb(0, 0, 0);
+  width: 195px;
+  min-width: 195px;
+  font-size: 15px;
+  line-height: 1.2rem;
+  padding: 2px;
+}
+
+.closeBtnRight {
+  width: 25px;
+  height: 25px;
+}
+
+.login-card {
+  background-color: #c4b3ab;
+  // background-color: rgb(226, 196, 115);
+  // background-color: rgb(239,237,238);
+}
+
+// ::ng-deep codes in style.css to use in all forms for angular 15 onward
+// as background is light colored, we need black or dark color for text and borders
+
+::ng-deep .mat-mdc-list-item__primary-text {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+::ng-deep .mdc-notched-outline__leading {
+  border-color: rgba(0, 0, 0, 0.445) !important;
+}
+::ng-deep .mdc-notched-outline__notch {
+  border-color: rgba(0, 0, 0, 0.445) !important;
+}
+::ng-deep .mdc-notched-outline__trailing {
+  border-color: rgba(0, 0, 0, 0.445) !important;
+}
+// Color of item selected using mat-select
+::ng-deep .mat-mdc-select-value {
+  color: rgba(0, 0, 0, 0.87);
+}
+// Floating label text color
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+// Select arrow/caret color
+.mat-mdc-select-arrow {
+  color: rgba(0, 0, 0, 0.87);
+}

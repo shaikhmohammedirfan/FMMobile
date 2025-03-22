@@ -1,0 +1,98 @@
+<div style="margin-bottom: 20%">
+  <p class="pageTitle" style="margin-top: 90px">Select Delivery Address</p>
+
+  @for(item of addresslist; track item; let i=$index ) {
+  <mat-card appearance="outlined" style="height: 200px">
+    <div>
+      <span style="float: left"
+        ><mat-card-title class="contentText">
+          {{ item.address_type }}
+        </mat-card-title>
+      </span>
+      <span style="float: right">
+        <button class="btn-submitFIT" (click)="editAddress(item)">
+          Edit
+        </button></span
+      >
+    </div>
+    <div class="addressClass">
+      <p>{{ item.area_street }}</p>
+      <p>{{ item.city_dist }}</p>
+      <p>{{ item.country }}</p>
+    </div>
+    <br />
+    <button
+      class="btn-submitFIT"
+      style="
+        background-color: #055377;
+        padding: 8px;
+        color: white;
+        font-size: 11px;
+        margin-left: 5px;
+        width: fit-content;
+        padding: 10px;
+      "
+      (click)="addressSelected(item.address_type)"
+    >
+      Use this Address
+    </button>
+    <br />
+  </mat-card>
+  }
+  <br />
+  <p class="pageTitle">
+    <button
+      class="btn-submitFIT"
+      style="width: fit-content; padding: 10px"
+      (click)="addNewAddress()"
+    >
+      Add new delivery address
+    </button>
+  </p>
+</div>
+<!-- <div class="jumbotron" style="margin-top: 10px; margin-bottom: 20%">
+  <div *ngFor="let item of addresslist; let i = index" class="jumbotronBasic">
+    <div style="font-size: 12px; vertical-align: middle; margin: 15px">
+      <span style="float: left">
+        <p style="float: left">Address type: {{ item.address_type }}</p>
+      </span>
+      <span style="float: right">
+        <button
+          class="btn-submitFIT"
+          style="width: 45px; height: 25px; padding: 8px; font-size: 9px"
+          (click)="editAddress(item)"
+        >
+          Edit
+        </button></span
+      >
+    </div>
+    <br />
+    <div style="font-size: 12px; margin: 2px">
+      <p>
+        {{ item.customer_name }}, {{ item.reg_mobileno }},{{
+          item.area_street
+        }},{{ item.city_dist }},{{ item.pincode }}
+      </p>
+      <p>
+        {{ item.country }}
+      </p>
+      <br />
+      <button
+        class="btn-submitFIT"
+        style="
+          background-color: rgb(0, 0, 0);
+          padding: 8px;
+          color: white;
+          font-size: 11px;
+          margin-left: 5px;
+        "
+        (click)="addressSelected(item.address_type)"
+      >
+        Use this address
+      </button>
+    </div>
+  </div>
+  <button class="btn-submitFIT" style="margin: 10px" (click)="addNewAddress()">
+    Add new address
+  </button>
+</div> -->

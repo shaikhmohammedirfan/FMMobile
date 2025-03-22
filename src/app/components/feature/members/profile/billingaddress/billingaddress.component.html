@@ -1,0 +1,59 @@
+@for(billitem of custbilladdress;track billitem; let i=$index ) {
+<mat-card
+  appearance="outlined"
+  style="
+    background-color: transparent;
+    color: white;
+    border-color: rgb(218, 216, 216);
+  "
+>
+  <div>
+    <span style="float: left"
+      ><mat-card-title> Billing Address </mat-card-title>
+    </span>
+    <span style="float: right">
+      <button class="btn-submitFIT" (click)="editDeliveryAddress()">
+        Edit
+      </button></span
+    >
+  </div>
+  @if(loader.isLoading | async) {
+  <div>
+      <mat-progress-bar
+      mode="indeterminate"
+      class="loader-container"
+    ></mat-progress-bar>
+  </div>
+  }
+  <br />
+  <div class="addressClass">
+    <!-- {{ billitem.customer_name }}, <b>{{ billitem.reg_mobileno }}</b>
+    <br /> -->
+    {{ billitem.bill_addr_area_street }},
+    <br />
+    {{ billitem.bill_addr_landmark }},
+    <br />
+    {{ billitem.bill_addr_city_dist }},
+    <br />
+    {{ billitem.bill_addr_state }} - {{ billitem.bill_addr_pincode }},
+    <br />
+    {{ billitem.bill_addr_country }}
+  </div>
+</mat-card>
+
+}
+<br />
+<p class="pageTitle">
+  <button
+    class="btn-submitFIT"
+    (click)="addNewAddress()"
+    style="
+      width: fit-content;
+      padding: 10px;
+      background-color: white;
+      color: black;
+    "
+  >
+    Add new billing address
+  </button>
+</p>

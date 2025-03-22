@@ -1,0 +1,45 @@
+<!-- <div style="margin-top: 90px; margin-bottom: 20px" class="flex-container">
+  <button title="Sort" (click)="sort()">Sort</button>
+
+  <button data-toggle="tooltip" title="Filter" (click)="filter()">
+    Filter
+  </button>
+</div>
+<br />
+<div class="flex-container">
+  @for (category of catList; track category.category_code; let i =$index) {
+  <div
+    class="flex-card"
+    (click)="prodsByCategory(category.category_code, $event)"
+  >
+    <div class="card-header">
+      <img width="73px" height="73px" [src]="category.imageurl" alt="picture" />
+    </div>
+
+    <div class="card-content">
+      {{ category.description }}
+    </div>
+  </div>
+  }
+</div> -->
+
+<div style="text-align: center; margin-bottom: 30%">
+  @if (loader.isLoading | async) {
+  <div style="margin-top: 100px">
+      <mat-progress-bar
+      mode="indeterminate"
+      class="loader-container"
+    ></mat-progress-bar>
+  </div>
+  }
+
+  <app-prods-category-card
+    [categoryArray]="categoryarray"
+  ></app-prods-category-card>
+
+  <div style="text-align: center; margin-bottom: 30%" *ngIf="countRecords">
+    <button class="btn-submitFIT" title="More Items" (click)="moreRecords()">
+      More Items
+    </button>
+  </div>
+</div>

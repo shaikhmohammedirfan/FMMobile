@@ -1,0 +1,23 @@
+.jumbotron {
+  height: 100%;
+  min-height: 100%;
+}
+
+.pageTitle {
+  margin-top: 80px;
+}
+
+// For progressBar
+.loader-container {
+  position: fixed;
+  width: 90%;
+  z-index: 99;
+}
+
+button {
+  min-width: 170px;
+  min-height: 40px;
+  font-family: MyHeadings;
+  font-size: 15px;
+  font-weight: 400;
+}

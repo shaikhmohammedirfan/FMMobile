@@ -1,0 +1,65 @@
+.details {
+  color: white;
+  line-height: 2;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 90px;
+  margin-bottom: 20%;
+  font-size: 20px;
+  gap: 5px;
+}
+
+mat-panel-title,
+mat-panel-description {
+  font-family: MyHeadings;
+  font-size: 16px;
+  font-weight: 100;
+  color: white;
+}
+
+mat-panel-description {
+  font-size: 14px;
+  font-weight: normal;
+}
+.btn-submit {
+  font-size: 16px;
+
+  width: fit-content;
+  font-weight: normal;
+  padding: 5px 20px;
+}
+.example-action-buttons {
+  padding-bottom: 20px;
+}
+
+.mat-mdc-card-title {
+  font-size: 25px;
+}
+
+.mat-mdc-card {
+  background: transparent;
+}
+@media screen and (max-width: 700px) {
+  // For small screens
+
+  .details {
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .btn-submitFIT {
+    font-size: 12px;
+    width: 40px;
+    height: 25px;
+    padding: 5px;
+  }
+
+  mat-panel-title,
+  mat-panel-description {
+    font-size: 12px;
+  }
+
+  .mat-mdc-card-title {
+    font-size: 16px;
+  }
+}

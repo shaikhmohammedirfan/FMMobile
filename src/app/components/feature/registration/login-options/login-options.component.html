@@ -1,0 +1,62 @@
+<div class="jumbotron">
+  <div>
+    <span style="float: left"> Sign in with: </span>
+    <span style="float: right">
+      <button class="closeBtnRight" (click)="closeForm()">X</button>
+    </span>
+  </div>
+
+  <div class="flex-container">
+    <button class="flex-item" type="button" (click)="googleSignIn()">
+      Google
+    </button>
+
+    <button class="flex-item">Facebook</button>
+
+    <button class="flex-item">Twitter</button>
+
+    <button class="flex-item">OTP</button>
+  </div>
+  <br />
+  <a
+    style="
+      font-size: 20px;
+      font-weight: bolder;
+      color: white;
+      display: flex;
+      justify-content: center;
+    "
+  >
+    OR
+  </a>
+  <br />
+  <div id="login" class="login-card">
+    <app-email-password-form
+      (submitEvent)="frmSubmitting($event)"
+    ></app-email-password-form>
+    <div>
+      <span
+        style="
+          float: left;
+          margin-top: 45px;
+          color: black;
+          font-size: 13px;
+          font-weight: bolder;
+        "
+      >
+        <a routerLink="/sign-up-options"> New Account </a>
+      </span>
+      <span
+        style="
+          float: right;
+          margin-top: 45px;
+          color: black;
+          font-size: 13px;
+          font-weight: bolder;
+        "
+      >
+        <a routerLink="/sign-up-options"> Send OTP </a>
+      </span>
+    </div>
+  </div>
+</div>

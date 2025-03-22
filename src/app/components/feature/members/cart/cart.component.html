@@ -1,0 +1,168 @@
+<div style="margin-top: 100px; color: white" *ngIf="emptycontainer == true">
+  <div class="flex-container">
+    <h1 class="pageTitle">Your cart is empty!</h1>
+  </div>
+
+  <div class="flex-container">
+    <button
+      class="btn-submitFIT"
+      style="font-family: MyHeadings"
+      (click)="continueShopping()"
+    >
+      CONTINUE SHOPPING
+    </button>
+  </div>
+
+  <div style="text-align: center; margin-top: 50px">
+    <img
+      width="400px"
+      height="400px"
+      src="../../../../../assets/images/emptyCart.jpg"
+      alt="picture"
+    />
+  </div>
+</div>
+
+<div *ngIf="cartdatalength">
+  <p class="pageTitle">Cart Details</p>
+
+  @if (loader.isLoading | async) {
+  <div>
+      <mat-progress-bar
+      mode="indeterminate"
+      class="loader-container"
+    ></mat-progress-bar>
+  </div>
+  }
+
+  <app-cartcard [cartArray]="cartItems"></app-cartcard>
+
+  <app-carttotal [cartArray]="this.cartItems"></app-carttotal>
+
+  <div style="margin-top: 10px; margin-bottom: 5%" class="flex-container">
+    <button
+      (click)="placeOrder()"
+      class="btn-submitFIT"
+      style="background-color: r#055377; border: none; color: white"
+    >
+      PLACE ORDER
+    </button>
+
+    <button
+      (click)="continueShopping()"
+      class="btn-submitFIT"
+      style="
+        background-color: rgb(248, 240, 238);
+        border: none;
+        color: rgb(14, 13, 13);
+      "
+    >
+      CONTINUE SHOPPING
+    </button>
+  </div>
+
+  <!-- <div
+    style="
+      display: flex;
+      flex-direction: row;
+
+      width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+    "
+  >
+    <button class="btn-submitFIT" (click)="placeOrder()">PLACE ORDER</button>
+    <button class="WhiteBtn" (click)="continueShopping()">
+      CONTINUE SHOPPING
+    </button>
+  </div> -->
+
+  <!-- <div class="flex-container">
+    <button class="btn-submitFIT" (click)="placeOrder()">PLACE ORDER</button>
+  </div>
+
+  <div class="flex-container">
+    <button class="WhiteBtn" (click)="continueShopping()">
+      CONTINUE SHOPPING
+    </button>
+  </div> -->
+</div>
+
+@if (savedItems) {
+
+<div style="margin-bottom: 30%">
+  <app-savedcard [savedItemArray]="this.savedItems"></app-savedcard>
+</div>
+}
+<!-- 
+<div *ngIf="cartItems.length === 0; then empty; else nonempty"></div>
+<ng-template #empty style="color: white; margin-top: 100px"
+  >empty cart...</ng-template
+>
+<ng-template #nonempty style="color: white; margin-top: 100px"
+  >other content here...</ng-template
+> -->
+
+<!-- <p
+  *ngIf="cartItems.length > 0; else elseTemplateName"
+  style="color: white; margin-top: 100px"
+>
+  dfdsdsd
+</p> -->
+
+<!-- <ng-container
+  *ngIf="cartItems.length > 0; then notempty; else empty"
+  style="margin-top: 100px; color: white"
+>
+  <h3 class="pageTitle">Cart Details</h3>
+  <app-cartcard [cartArray]="this.cartItems"></app-cartcard>
+
+  <app-carttotal [cartArray]="this.cartItems"></app-carttotal>
+  <h3 class="pageTitle">Saved For Later (totalitems)</h3>
+  <app-saveforlater></app-saveforlater>
+</ng-container>
+
+<ng-template #notempty style="margin-top: 100px; color: white">
+  <div style="margin-top: 100px; color: white"></div>
+</ng-template>
+
+<ng-template #empty style="margin-top: 100px; color: white">
+  <div style="margin-top: 100px; color: white">
+    <div class="flex-container">
+      <h1 class="pageTitle">Your cart is empty!</h1>
+    </div>
+
+    <div class="flex-container">
+      <button
+        class="btn-submitFIT"
+        style="font-family: MyHeadings"
+        (click)="continueShopping()"
+      >
+        CONTINUE SHOPPING
+      </button>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px">
+      <img
+        width="400px"
+        height="400px"
+        src="../../../../../assets/images/emptyCart.jpg"
+        alt="picture"
+      />
+    </div>
+    
+</ng-template> -->
+
+<!-- <ng-container
+  *ngIf="cartItems.length > 0; then iAmDone; else iAmNotDone"
+  style="margin-top: 100px; color: white"
+>
+</ng-container>
+
+<ng-template #iAmDone style="margin-top: 100px; color: white">
+  <div style="margin-top: 100px; color: white">It's Not Done!</div>
+</ng-template>
+
+<ng-template #iAmNotDone style="margin-top: 100px; color: white">
+  <div style="margin-top: 100px; color: white">It's Not Done!</div>
+</ng-template> -->

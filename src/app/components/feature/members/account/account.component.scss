@@ -1,0 +1,49 @@
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listitems {
+  cursor: pointer;
+}
+
+.jumbotron {
+  margin-top: 0px;
+  padding: 10px;
+  margin-bottom: 20%;
+}
+
+// p {
+//   margin-top: 100px;
+//   color: wheat;
+//   text-align: center;
+//   font-size: 4vw;
+// }
+
+hr {
+  height: 1px;
+  border-width: 0;
+  color: gray;
+  background-color: gray;
+  margin-block-start: 0px;
+  margin-block-end: 0.5em;
+}
+span {
+  margin-left: 30px;
+  font-size: 15px;
+  color: gray;
+}
+img {
+  margin-left: 6px;
+  color: gray;
+}
+
+a {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 2;
+  color: rgb(184, 179, 179);
+  cursor: pointer;
+}

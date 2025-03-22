@@ -1,0 +1,16 @@
+.btn-submitFIT {
+  width: 100px;
+  height: 40px;
+  padding: 5px;
+}
+@media screen and (max-width: 700px) {
+  // For small screens
+  .mat-mdc-card-title {
+    font-size: 15px;
+  }
+  .btn-submitFIT {
+    width: 50px;
+    height: 35px;
+    padding: 3px;
+  }
+}

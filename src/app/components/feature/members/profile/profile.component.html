@@ -1,0 +1,117 @@
+@for (item of customer; track item; let i=$index) {
+
+<div class="details">
+  <div class="flex-container">
+    <span class="pageTitle"> {{ item.customer_name }} </span>
+  </div>
+
+  <mat-accordion class="mat-accordion-heading" multi>
+    <!-- -----panel1------- -->
+    <mat-expansion-panel
+      [expanded]="true"
+      class="mat-panel-style"
+      style="background-color: transparent; color: white; border: white"
+    >
+      <mat-expansion-panel-header
+        style="background-color: rgb(131, 37, 37); color: white"
+      >
+        <mat-panel-title> Personal Information </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="container p-3 my-3">
+        <app-customermstform *ngIf="!customer; else customerdetails">
+        </app-customermstform>
+        <ng-template #customerdetails>
+          <app-customermst> </app-customermst>
+        </ng-template>
+      </div>
+    </mat-expansion-panel>
+    <br />
+
+    <!-- -----panel2------- -->
+    <mat-expansion-panel
+      class="mat-panel-style"
+      style="background-color: transparent; color: white; border: white"
+    >
+      <mat-expansion-panel-header
+        style="background-color: #055377; color: white"
+      >
+        <mat-panel-title> Addresses </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="container p-3 my-3">
+        <app-billform *ngIf="!customer; else allbilladdresses"> </app-billform>
+        <ng-template #allbilladdresses>
+          <app-billingaddress> </app-billingaddress>
+        </ng-template>
+      </div>
+
+      <br />
+      <div class="flex-container">
+        <span class="pageTitle"> List Of Delivery Addresses </span>
+      </div>
+
+      <mat-card
+        appearance="outlined"
+        style="
+          background-color: transparent;
+          color: white;
+          border-color: rgb(218, 216, 216);
+        "
+      >
+        <div class="container p-3 my-3">
+          <!-- <app-deliveryform
+            *ngIf="!custdeliveryaddresses; else alldeliveryaddresseses"
+          >
+          </app-deliveryform>
+          <ng-template #alldeliveryaddresseses> -->
+          <app-deliveryaddress> </app-deliveryaddress>
+          <!-- </ng-template> -->
+        </div>
+      </mat-card>
+
+      <!-- <div class="container p-3 my-3">
+        <app-deliveryform
+          *ngIf="!custdeliveryaddresses; else alldeliveryaddresseses"
+        >
+        </app-deliveryform>
+        <ng-template #alldeliveryaddresseses>
+          <app-deliveryaddress> </app-deliveryaddress>
+        </ng-template>
+      </div> -->
+
+      <!-- <mat-card
+        appearance="outlined"
+        style="
+          background-color: transparent;
+          color: white;
+          border-color: rgb(218, 216, 216);
+        "
+      >
+        <mat-card-title> Delvery Addresses </mat-card-title>
+        <br />
+      </mat-card> -->
+    </mat-expansion-panel>
+    <br />
+    <!-- -----panel3------- -->
+    <!-- <mat-expansion-panel class="mat-panel-style">
+      <mat-expansion-panel-header
+        style="background-color: rgb(11, 51, 19); color: white"
+      >
+        <mat-panel-title style="color: white"> Orders </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-form-field>
+        <mat-label>Date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          (focus)="picker.open()"
+          readonly
+        />
+      </mat-form-field>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-expansion-panel> -->
+  </mat-accordion>
+</div>
+}

@@ -1,0 +1,119 @@
+<div class="jumbotron">
+  <div class="flex-container">
+    @if(savedItemArray.length > 0) {
+    <p class="pageTitle">
+      Saved For Later ({{ this.savedItemArray.length }} items)
+    </p>
+    }
+
+    <div
+      *ngFor="let saveditem of savedItemArray; let i = index"
+      class="content cart-card"
+    >
+      <div class="content cart-card">
+        <div
+          style="
+            font-size: 18px;
+            line-height: 1.8;
+            font-weight: 500;
+            color: rgb(39, 38, 38);
+            padding: 2px;
+            text-align: center;
+          "
+        >
+          <span style="float: left">
+            <div
+              class="cart-card-header"
+              (click)="prodDetails(saveditem, $event)"
+            >
+              <b> {{ saveditem[0].productname }} </b>
+            </div>
+          </span>
+          <!-- <span style="float: right; font-size: 14px; word-break: break-all"
+            >Delivery date ...</span
+          > -->
+        </div>
+
+        <!-- product-container code -->
+
+        <div class="cart-card-content">
+          <div class="product-container">
+            <img
+              width="50px"
+              height="50px"
+              [src]="saveditem[0].imageurl"
+              alt="product image"
+              class="prodHalfImage"
+            />
+          </div>
+
+          <div class="product-container">
+            <p *ngIf="saveditem.onoffer">
+              <b style="font-size: 15px; font-weight: bolder; color: blue"
+                >{{ saveditem[0].offerpercentage / 100 | percent }} Off</b
+              >
+            </p>
+
+            <br />
+            <p>
+              <del>
+                {{ saveditem[0].mrp | currency : "USD" : "symbol" }}
+              </del>
+            </p>
+            <p>
+              {{ saveditem[0].currentprice | currency : "USD" : "symbol" }}
+            </p>
+
+            <br />
+            <p>{{ saveditem[0].mfgname }}</p>
+
+            <br />
+            <p style="font-weight: bolder">
+              {{ saveditem[0].line_total | currency : "USD" : "symbol" }}
+            </p>
+          </div>
+        </div>
+        <!-- end of product-container code -->
+      </div>
+      <br />
+      <br />
+      <div class="content cart-card">
+        <div
+          style="
+            font-size: 18px;
+            line-height: 1.8;
+            font-weight: 500;
+            color: rgb(39, 38, 38);
+            padding: 2px;
+            text-align: center;
+          "
+        >
+          <span style="float: left">
+            <button
+              style="float: right"
+              class="btn-submitFIT"
+              (click)="move2cart(saveditem, $event)"
+            >
+              Move To Cart
+            </button>
+          </span>
+
+          <span
+            ><button
+              style="
+                float: right;
+                background-color: rgb(165, 43, 22);
+                border: none;
+                color: white;
+              "
+              class="btn-submitFIT"
+              (click)="delItem(saveditem, $event)"
+            >
+              Remove
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

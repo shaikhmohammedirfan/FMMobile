@@ -1,0 +1,120 @@
+<div class="jumbotronHeader" *ngIf="customername">
+  <div class="centerContent">
+    <img id="otherimg" src="../assets/icons/user.png" />
+    Welcome {{ customername }}
+  </div>
+</div>
+
+<div class="jumbotron" *ngIf="customername">
+  <div class="listitems" routerLink="../profile" style="font-size: 20px">
+    <img id="otherimg" src="../assets/icons/user1.png" />
+    Account Settings
+  </div>
+
+  <!-- <div style="margin-top: 10px">
+    <span routerLink="../profile"> Profile Details</span>
+    <img id="frontarrowimg" src="../assets/icons/frontarrow.png" />
+  </div> -->
+  <br />
+
+  <div class="listitems" routerLink="../allorders">
+    <img id="otherimg" src="../assets/icons/order_icon.svg" />
+    Orders
+  </div>
+  <!-- <div style="margin-top: 10px; cursor: pointer" routerLink="../orders">
+    <span>Completed Orders</span>
+    <img id="frontarrowimg" src="../assets/icons/frontarrow.png" />
+  </div>
+  <div style="margin-top: 10px; cursor: pointer" routerLink="../orders">
+    <span>Pending Orders</span>
+    <img id="frontarrowimg" src="../assets/icons/frontarrow.png" />
+  </div> -->
+  <br />
+
+  <div class="listitems" routerLink="../cart">
+    <img id="otherimg" src="../assets/icons/cartColor.png" />
+    Cart
+  </div>
+
+  <!-- <div style="margin-top: 10px" routerLink="../cart">
+    <span>Goto Cart</span>
+    <img id="frontarrowimg" src="../assets/icons/frontarrow.png" />
+  </div> -->
+  <br />
+
+  <div class="listitems" routerLink="../wishlist">
+    <img id="otherimg" src="../assets/icons/wish_list_icon.svg" />
+    Wishlist
+  </div>
+
+  <!-- <div class="listitems" routerLink="../wishlist">
+    <span>Wishlist</span>
+    <img id="frontarrowimg" src="../assets/icons/frontarrow.png" />
+  </div> -->
+  <br />
+
+  <div class="listitems" routerLink="../profile">
+    <img id="otherimg" src="../assets/icons/delivery_address_icon.svg" />
+    Addresses
+  </div>
+
+  <!-- <div style="margin-top: 10px" routerLink="../profile">
+    <span>Address Details</span>
+    <img id="frontarrowimg" src="../assets/icons/frontarrow.png" />
+  </div> -->
+  <br />
+
+  <div class="listitems" routerLink="../help">
+    <img id="otherimg" src="../assets/icons/help.png" />
+    Help
+  </div>
+
+  <!-- <div style="margin-top: 10px" routerLink="../help">
+    <span>Need Help</span>
+    <img id="frontarrowimg" src="../assets/icons/frontarrow.png" />
+  </div> -->
+  <br />
+
+  <div class="listitems" (click)="logout()">
+    <img id="otherimg" src="../assets/icons/logout.png" />
+    Logout
+  </div>
+
+  <br />
+
+  <div class="listitems" (click)="logout()" routerLink="../gymlogin">
+    <img id="otherimg" src="../assets/icons/logout.png" />
+    Login
+  </div>
+
+  <!-- <div style="margin-top: 10px" (click)="logout()" routerLink="../gymlogin">
+    <span>Sign Out</span>
+    <img id="frontarrowimg" src="../assets/icons/frontarrow.png" />
+    <br />
+    <span>Sign In</span>
+    <img id="frontarrowimg" src="../assets/icons/frontarrow.png" />
+    <br />
+    <br />
+  </div> -->
+  <br />
+</div>
+
+<!-- <ng-template #nomember style="margin-top: 100px; color: rgb(255, 72, 0)">
+  <div
+    class="card centerContent"
+    style="margin-top: 125px; color: rgb(255, 72, 0)"
+  >
+    Required Information Not Found! Please Login
+  </div>
+</ng-template> -->
+<!-- <div class="flex-container">
+  <button class="flex-item" type="button">Orders</button>
+
+  <button class="flex-item">Wishlist</button>
+
+  <button class="flex-item">Settings</button>
+
+  <button class="flex-item">Help</button>
+
+  <button class="flex-item">Logout</button>
+</div> -->

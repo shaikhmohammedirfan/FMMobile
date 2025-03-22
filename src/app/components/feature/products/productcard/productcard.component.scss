@@ -1,0 +1,56 @@
+/* Page-wide Styles */
+* {
+  font-size: 12px;
+  // font-family: Arial, Helvetica, sans-serif;
+}
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px;
+  padding-bottom: 10px;
+}
+
+.flex-card-header {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+// .flex-card-content {
+//   height: 85px;
+//   // Text mask for fixed size for all items
+//   min-height: 85px;
+//   line-height: 1.2;
+//   padding: 2px;
+//   width: 100%;
+//   // font-size: 12px;
+//   font-weight: bold;
+//   margin-bottom: 1px;
+//   color: rgb(0, 0, 0);
+// }
+
+.placeholder {
+  width: calc(50% - 20px);
+  margin: 0, 10px;
+  height: 396px;
+  background: #d8d8d8;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.08);
+}
+.btn {
+  position: absolute;
+  top: 5%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  // background-color: #555;
+  color: white;
+  // font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  // border-radius: 5px;
+  // text-align: center;
+}

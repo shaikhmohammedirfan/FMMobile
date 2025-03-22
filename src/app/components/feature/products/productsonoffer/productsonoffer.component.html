@@ -1,0 +1,31 @@
+<div style="text-align: center; margin-bottom: 30%">
+  @if (loader.isLoading | async) {   <mat-progress-bar
+    mode="indeterminate"
+    class="loader-container"
+  ></mat-progress-bar>
+
+  }
+  <app-productcard [prodsarray]="offeredprods"></app-productcard>
+
+  <div style="text-align: center; margin-bottom: 30%" *ngIf="recordCounts">
+    <button class="btn-submitFIT" title="More Items" (click)="moreRecords()">
+      More Items
+    </button>
+  </div>
+</div>
+<!-- <div class="centerContents">
+  <button
+    title="AddToCart"
+    type="button"
+    style="
+      background-color: black;
+      font-size: 9px;
+      border: none;
+      width: 95%;
+      height: 30px;
+    "
+    (click)="moreRecords()"
+  >
+    More Records
+  </button>
+</div> -->

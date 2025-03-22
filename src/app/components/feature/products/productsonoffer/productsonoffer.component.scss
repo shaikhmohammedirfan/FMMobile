@@ -1,0 +1,23 @@
+// ----
+// horizontal scrollbar code
+.list-thumbnail {
+  height: 100%;
+  white-space: nowrap;
+}
+
+.img-thumb {
+  display: inline-block;
+  padding: 3px;
+  margin: 0 2px 0 0;
+}
+// -- end of code for To customize scrollbar ---
+
+@media screen and (max-width: 700px) {
+  // For small screens
+  .btn-submitFIT {
+    font-size: 12px;
+    width: 70px;
+    height: 35px;
+    padding: 5px;
+  }
+}

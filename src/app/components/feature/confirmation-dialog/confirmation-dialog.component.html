@@ -1,0 +1,43 @@
+<div mat-dialog-title>
+  <span mat-dialog-title style="float: left"> Insert Successfull </span>
+  <span mat-dialog-title style="float: right">
+    <button class="closeBtnRight" mat-dialog-close>X</button>
+  </span>
+</div>
+<mat-dialog-content class="mat-typography">
+  <h3>New Item Added To Cart</h3>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div>
+    <span mat-dialog-title style="float: left">
+      <button
+        mat-button
+        mat-dialog-close
+        cdkFocusInitial
+        class="btn-submitFIT"
+        style="background-color: blue; color: white"
+      >
+        Continue Shopping
+      </button>
+    </span>
+    <span mat-dialog-title style="float: right">
+      <button
+        mat-button
+        [mat-dialog-close]="'go2cart'"
+        style="
+          float: right;
+          background-color: black;
+          font-size: 11px;
+          color: white;
+          border: none;
+          width: fit-content;
+          height: 25px;
+          padding: 10px;
+        "
+        routerLink="cart"
+      >
+        GoToCart
+      </button>
+    </span>
+  </div>
+</mat-dialog-actions>

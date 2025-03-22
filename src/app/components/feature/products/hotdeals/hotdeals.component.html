@@ -1,0 +1,60 @@
+<div class="scroll-container scrollmenu">
+  @if (loader.isLoading | async) {   <mat-progress-bar
+    mode="indeterminate"
+    class="loader-container"
+  ></mat-progress-bar>
+
+  } @for (deal of allhotdeals; track deal; let i = $index) {
+  <div class="img-thumb" style="margin-bottom: 5px; margin-left: 0px">
+    <div
+      appearance="outlined"
+      title="Brands Page"
+      class="flex-item flex-card"
+      (click)="prodDetails(deal, $event)"
+    >
+      <div class="flex-card-header">
+        <img
+          width="100px"
+          height="100px"
+          [src]="deal.imageurl"
+          alt="picture"
+          class="prodHalfImage"
+        />
+      </div>
+      <br />
+      <div class="flex-card-header">
+        <p style="height: 30px; min-height: 30px; flex-wrap: wrap">
+          {{ deal.productname }}
+        </p>
+
+        <p
+          style="margin-bottom: 2px; color: rgb(112, 108, 108)"
+          title="Brand Page"
+          (click)="goToBrandPage(deal.mfgname, $event)"
+        >
+          {{ deal.mfgname }}
+        </p>
+        <span>
+          <p>
+            Offer
+            <b style="font-size: 12px; font-weight: bolder; color: blue">{{
+              deal.currentprice | currency : "USD" : "symbol"
+            }}</b>
+          </p>
+
+          <p
+            style="
+              font-size: 10px;
+              text-decoration: line-through;
+              color: rgb(88, 85, 85);
+            "
+          >
+            MRP
+            {{ deal.mrp | currency : "USD" : "symbol" }}
+          </p>
+        </span>
+      </div>
+    </div>
+  </div>
+  }
+</div>

@@ -1,0 +1,128 @@
+<div style="margin-top: 90px; text-align: center">
+  <button title="Sort" (click)="sort()">Sort</button>
+  <button data-toggle="tooltip" title="Filter" (click)="filter()">
+    Filter
+  </button>
+</div>
+<div class="flex-container">
+  @for (product of prodsarray; track product; let i = $index) { @defer () {
+  <div (click)="prodDetails(product[0], $event)">
+    <div
+      appearance="outlined"
+      title="Product Detail Page"
+      class="flex-item flex-card product-card"
+    >
+      <div class="flex-card-header">
+        <img
+          width="100px"
+          height="100px"
+          [src]="product[0].imageurl"
+          alt="picture"
+          class="prodHalfImage"
+        />
+        <!-- <button
+              class="btn"
+              title="Add To WishList"
+              (click)="addToWishList(product, $event)"
+              >
+              <img
+                id="plusimg"
+                src="../../../../../assets/icons/heartRed.png"
+                routerLink="loginoptions"
+                style="width: 20px; height: 20px"
+                />
+            </button> -->
+      </div>
+      <br />
+      <div class="flex-card-header">
+        <p style="height: 30px; min-height: 30px; flex-wrap: wrap">
+          {{ product[0].productname }}
+        </p>
+        <p
+          style="margin-bottom: 2px; color: rgb(112, 108, 108)"
+          title="Brand Page"
+          (click)="goToBrandPage(product[0].mfgname, $event)"
+        >
+          {{ product[0].mfgname }}
+        </p>
+        <span>
+          <p>
+            Offer
+            <b style="font-weight: bolder; color: blue">{{
+              product[0].currentprice | currency : "USD" : "symbol"
+            }}</b>
+          </p>
+          <p
+            style="
+              font-size: 10px;
+              text-decoration: line-through;
+              color: rgb(88, 85, 85);
+            "
+          >
+            MRP
+            {{ product[0].mrp | currency : "USD" : "symbol" }}
+          </p>
+        </span>
+        @if (!product[0].cart_product_qty) {
+        <div #cartpanel>
+          <button
+            title="AddToCart"
+            type="button"
+            style="
+              background-color: black;
+              font-size: 11px;
+              color: white;
+              border: none;
+              width: fit-content;
+              height: 25px;
+              padding: 6px;
+            "
+            (click)="addToCart(product, $event)"
+          >
+            Add To Cart
+          </button>
+        </div>
+        } @if (product[0].cart_product_qty) {
+        <div #qtypanel>
+          <div style="width: 50%">
+            <div
+              style="
+                display: flex;
+                align-items: flex-end;
+                vertical-align: middle;
+                padding: 5px;
+                gap: 5px;
+                border: solid;
+                border-width: thin;
+                margin-left: 5px;
+                height: 35px;
+                width: 130px;
+              "
+            >
+              <img
+                id="plusimg"
+                src="../../../../../../assets/icons/plusCircle.png"
+                style="width: 25px; height: 25px"
+                (click)="addQty(product, $event)"
+              />
+              <button fill="clear" style="width: 50px; height: 23px">
+                {{ product[0].cart_product_qty }}
+              </button>
+              <img
+                id="minusimg"
+                src="../../../../../../assets/icons/minusCircle2.png"
+                routerLink="loginoptions"
+                style="width: 25px; height: 25px"
+                (click)="delQty(product, $event)"
+              />
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+  } @placeholder {
+  <div class="placeholder"></div>
+  } }
+</div>

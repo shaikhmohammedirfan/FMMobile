@@ -1,0 +1,35 @@
+export interface productinterface {
+  [x: string]: any;
+  productid: string;
+  barcode: string;
+  productname: string;
+  currentprice: number;
+  imageurl: string;
+  longdescription: string;
+  mfgname: string;
+  mrp: number;
+  cart_product_qty: number;
+  productcategory1: string;
+  productcategory2: string;
+  roductcategory3: string;
+  productcategory4: string;
+  productcategory5: string;
+  alternateproductid: string;
+  shelflifeindays: string;
+  stockuom: string;
+  supplierid: string;
+  pricecategory: string;
+  pricemethod: string;
+  taxcode: string;
+  othertaxcode: string;
+  gsttaxcode: string;
+  listprice: string;
+  abcclass: string;
+  costuom: string;
+  minpricepct: string;
+  whcode: string;
+  bincode: string;
+  update_by: string;
+  onoffer: boolean;
+  offerprice: number;
+}

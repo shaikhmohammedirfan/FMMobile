@@ -1,0 +1,62 @@
+<div id="login" class="bounceIn-card login-card" style="margin-top: 100px">
+  <button
+    class="closeBtnRight"
+    mat-button
+    mat-dialog-close
+    (click)="closeForm()"
+  >
+    X
+  </button>
+
+  <h2>Verify User Key</h2>
+  <!-- Page title value should come from calling component  -->
+  <!-- <mat-toolbar>
+     
+      {{ pageTitle }}
+    </mat-toolbar> -->
+
+  <div class="flex-container">
+    <form
+      [formGroup]="frmUserLogin"
+      id="frmUserLogin"
+      (ngSubmit)="onSubmit(this.frmUserLogin.value)"
+    >
+      <mat-form-field appearance="outline">
+        <mat-label>User Key</mat-label>
+        <input
+          id="userkey"
+          matInput
+          type="text"
+          placeholder="Enter Valid Userkey"
+          formControlName="userkey"
+        />
+        <mat-error
+          *ngIf="frmUserLogin.controls['userkey']?.errors?.['required']"
+        >
+          Required field!.. can not be blank.
+        </mat-error>
+      </mat-form-field>
+
+      <br />
+      <button
+        type="submit"
+        mat-raised-button
+        class="btn-submit"
+        (click)="onSubmit(this.frmUserLogin.value)"
+      >
+        Submit
+      </button>
+
+      <div *ngIf="error" style="color: red">
+        <strong>Error:</strong> {{ this.error }}
+      </div>
+
+      <div *ngIf="loader.isLoading | async">
+          <mat-progress-bar
+          mode="indeterminate"
+          class="loader-container"
+        ></mat-progress-bar>
+      </div>
+    </form>
+  </div>
+</div>

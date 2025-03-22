@@ -1,0 +1,171 @@
+<div class="jumbotron">
+  <div class="pageTitle">Customer Personal Information</div>
+  <br />
+  <form
+    [formGroup]="custMstForm"
+    (ngSubmit)="saveCustMst(this.custMstForm.value)"
+  >
+    <div class="flex-container">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>*Customer Full Name</mat-label>
+          <input
+            #customer_name
+            matInput
+            placeholder="*Customer Full Name"
+            formControlName="customer_name"
+          />
+          <mat-hint>(As apperad in official Id)</mat-hint>
+          <mat-error>
+            @if
+            (this.custMstForm.controls['customer_name']!.errors?.['required'] )
+            { Required field! cannot be null/blank. }
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>*Customer Short Name</mat-label>
+          <input
+            #shortname
+            matInput
+            placeholder="*Customer Short Name"
+            formControlName="shortname"
+          />
+
+          <mat-error>
+            @if (this.custMstForm.controls['shortname']!.errors?.['required'] )
+            { Required field! cannot be null/blank. }
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>*Valid/Active Mobile No.</mat-label>
+          <input
+            #reg_mobileno
+            matInput
+            placeholder="*Valid/Active Mobile No."
+            formControlName="reg_mobileno"
+          />
+
+          <mat-error>
+            @if (this.custMstForm.controls['reg_mobileno']!.errors?.['required']
+            ) { Required field! cannot be null/blank. }
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Valid/Active Email</mat-label>
+          <input
+            #reg_email
+            matInput
+            placeholder="*Valid/Active Email"
+            formControlName="reg_email"
+          />
+
+          <mat-error>
+            @if (this.custMstForm.controls['reg_email']!.errors?.['required'] )
+            { Required field! cannot be null/blank. }
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>*Mobile No. Verified? (Y/N)</mat-label>
+          <input
+            #mobile_verified
+            matInput
+            placeholder="*Mobile No. Verified? (Y/N)"
+            formControlName="mobile_verified"
+          />
+
+          <mat-error>
+            @if
+            (this.custMstForm.controls['mobile_verified']!.errors?.['required']
+            ) { Required field! cannot be null/blank. }
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Email Address Verified? (Y/N)</mat-label>
+          <input
+            #email_verified
+            matInput
+            placeholder="Email Address Verified? (Y/N)"
+            formControlName="email_verified"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>*Current Gym Id.</mat-label>
+          <input
+            #curr_gymid
+            matInput
+            placeholder="*Current Gym Id."
+            formControlName="curr_gymid"
+          />
+
+          <mat-error>
+            @if (this.custMstForm.controls['curr_gymid']!.errors?.['required'] )
+            { Required field! cannot be null/blank. }
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>*Account Status</mat-label>
+          <input
+            #account_status
+            matInput
+            placeholder="*Account Status"
+            formControlName="account_status"
+          />
+
+          <mat-error>
+            @if
+            (this.custMstForm.controls['account_status']!.errors?.['required'] )
+            { Required field! cannot be null/blank. }
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Customer PAN No.</mat-label>
+          <input
+            #customer_panno
+            matInput
+            placeholder="*Customer PAN No."
+            formControlName="customer_panno"
+          />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Alternate Mobile No.</mat-label>
+          <input
+            #alternatephone
+            matInput
+            placeholder="Alternate Mobile No."
+            formControlName="alternatephone"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div style="text-align: center; padding: 1%; margin-bottom: 20%">
+      <button
+        mat-flat-button
+        class="btn-submitFIT"
+        (click)="saveCustMst(this.custMstForm.value)"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

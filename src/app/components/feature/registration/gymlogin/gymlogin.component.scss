@@ -1,0 +1,17 @@
+// mat-form-field local form related code with ::ng-deep
+::ng-deep .mdc-notched-outline__leading {
+  border-color: rgba(0, 0, 0, 0.445) !important;
+}
+::ng-deep .mdc-notched-outline__notch {
+  border-color: rgba(0, 0, 0, 0.445) !important;
+}
+::ng-deep .mdc-notched-outline__trailing {
+  border-color: rgba(0, 0, 0, 0.445) !important;
+}
+// Color of item selected using mat-select
+::ng-deep .mat-mdc-select-value {
+  color: rgba(0, 0, 0, 0.445) !important;
+}
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: rgba(0, 0, 0, 0.445) !important;
+}

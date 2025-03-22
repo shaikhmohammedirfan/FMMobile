@@ -1,0 +1,89 @@
+<p class="pageTitle" style="margin-top: 90px">Login/Delivery Address</p>
+
+<mat-card appearance="outlined">
+  <div>
+    <span style="float: left"
+      ><mat-card-title class="addressClass">
+        User name: {{ this.auth.localcustomername.value }}
+      </mat-card-title>
+    </span>
+    <span style="float: right">
+      <button class="btn-submitFIT" (click)="changeLogin()">
+        Change
+      </button></span
+    >
+  </div>
+</mat-card>
+
+@for(address of shippingaddress; track address; let i=$index ) {
+
+<mat-card appearance="outlined" style="height: 200px">
+  <div>
+    <span style="float: left"
+      ><mat-card-title class="addressClass">
+        Delivery Address: {{ address.address_type }}
+      </mat-card-title>
+    </span>
+    <span style="float: right">
+      <button class="btn-submitFIT" (click)="changeAddress()">
+        Change
+      </button></span
+    >
+  </div>
+  <div class="addressClass">
+    <p>{{ address.area_street }}</p>
+    <p>{{ address.city_dist }}</p>
+    <p>{{ address.country }}</p>
+  </div>
+</mat-card>
+}
+<br />
+<div>
+  <p class="pageTitle">Order Summary</p>
+  <!-- <p class="pageTitle">(Please check and confirm)</p> -->
+
+  <app-cartcard
+    [cartArray]="this.orderlist"
+    *ngIf="orderqty > 0"
+  ></app-cartcard>
+
+  <app-carttotal
+    [cartArray]="this.orderlist"
+    *ngIf="orderqty > 0"
+  ></app-carttotal>
+</div>
+
+<div
+  style="margin-top: 10px; margin-bottom: 10px; color: white"
+  class="flex-container"
+>
+  <mat-form-field appearance="outline" style="color: white">
+    <mat-label>Coupon Code</mat-label>
+    <input matInput placeholder="Coupon Code" />
+    <mat-hint>Enter Valid Coupon Code</mat-hint>
+  </mat-form-field>
+  <button class="BWButton" (click)="applyCoupon()">Apply Coupon</button>
+</div>
+
+<div style="margin-top: 10px; margin-bottom: 30%" class="flex-container">
+  <button
+    *ngIf="orderqty > 0"
+    class="btn-submitFIT btnClass"
+    style="background-color: #055377; border: none; color: white"
+    (click)="confirmOrder()"
+  >
+    CONFIRM ORDER
+  </button>
+
+  <button
+    class="btn-submitFIT btnClass"
+    style="
+      background-color: rgb(248, 240, 238);
+      border: none;
+      color: rgb(14, 13, 13);
+    "
+    (click)="continueShopping()"
+  >
+    CONTINUE SHOPPING
+  </button>
+</div>

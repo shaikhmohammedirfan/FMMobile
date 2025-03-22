@@ -1,0 +1,22 @@
+<div>
+  @if (loader.isLoading | async) {
+  <div style="margin-top: 100px">
+      <mat-progress-bar
+      mode="indeterminate"
+      class="loader-container"
+    ></mat-progress-bar>
+  </div>
+  }
+
+  <app-brandcard [brandsArray]="newAllBrands"></app-brandcard>
+
+  <div class="flex-container" *ngIf="countRecords">
+    <button
+      class="btn-submitFIT flex-container-margin-bottom"
+      title="More Items"
+      (click)="moreRecords()"
+    >
+      More Items
+    </button>
+  </div>
+</div>

@@ -1,0 +1,149 @@
+// .jumbotronBasic {
+//   display: flex;
+//   align-items: center;
+//   justify-content: left;
+//   padding-left: 10px;
+// }
+
+// .content {
+//   justify-items: left;
+//   padding-top: 5px;
+//   font-size: 15px;
+// }
+
+// .flex-card {
+//   width: 30%;
+//   display: flex;
+//   vertical-align: middle;
+//   line-height: 3;
+// }
+
+// @media screen and (max-width: 700px) {
+//   .flex-card {
+//     width: 80%;
+//   }
+// }
+
+.jumbotron {
+  flex-direction: column;
+  align-items: center;
+
+  height: 275px;
+
+  margin-bottom: 20px;
+  // padding-top: 20px;
+}
+
+.jumbotronBasic {
+  background-color: transparent;
+  border: solid 1px;
+  border-radius: 0.8em;
+  width: 95%;
+}
+
+mat-card {
+  background-color: transparent;
+  color: white;
+  border-color: rgb(218, 216, 216);
+  width: 95%;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+// .content {
+//   justify-items: left;
+//   padding-top: 5px;
+//   font-size: 15px;
+// }
+
+.flex-card {
+  width: 50%;
+  height: 200px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+  line-height: 3;
+  font-size: 15px;
+}
+
+.BWButton {
+  background-color: rgb(71, 68, 71);
+  width: fit-content;
+  padding: 10px;
+  padding-bottom: 15px;
+  font-family: MyHeadings;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.btnClass {
+  min-width: 170px;
+  min-height: 40px;
+  font-family: MyHeadings;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.btn-submitFIT {
+  background-color: white;
+  color: black;
+}
+
+::ng-deep .mdc-notched-outline__leading {
+  border-color: rgba(255, 255, 255, 0.445) !important;
+}
+
+::ng-deep .mdc-notched-outline__notch {
+  border-color: rgba(243, 241, 241, 0.445) !important;
+}
+::ng-deep .mdc-notched-outline__trailing {
+  border-color: rgba(255, 255, 255, 0.445) !important;
+}
+
+// Floating label text color
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: rgba(255, 255, 255, 0.445) !important;
+}
+
+.mat-mdc-select-arrow {
+  color: rgba(243, 240, 240, 0.445) !important;
+}
+
+::ng-deep .mdc-text-field .mdc-text-field__input {
+  color: rgba(243, 240, 240, 0.445) !important;
+}
+
+// Code for small screen
+@media screen and (max-width: 900px) {
+  .flex-card {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .btn-submitFIT {
+    width: 55px;
+    height: 31px;
+    padding: 1px;
+    font-size: 12px;
+  }
+  .addressClass {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  // .btn-submitFIT {
+  //   width: 35px;
+  //   height: 18px;
+  //   padding: 1px;
+  //   font-size: 8px;
+  // }
+  .jumbotronBasic {
+    font-size: 8px;
+  }
+
+  .jumbotron {
+    height: 300px;
+  }
+}

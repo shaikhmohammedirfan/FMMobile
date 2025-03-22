@@ -1,0 +1,139 @@
+<div class="jumbotron mat-elevation-z1 TextWhite">
+  <div style="align-items: end">
+    <button
+      class="closeBtnRight"
+      mat-button
+      mat-dialog-close
+      (click)="closeForm($event)"
+    >
+      X
+    </button>
+  </div>
+  <br />
+  <mat-card-title>Contact Us Using</mat-card-title>
+  <br />
+
+  <div class="flex-container">
+    <button class="flex-item" type="button" (click)="googleSignIn()">
+      Google
+    </button>
+
+    <button class="flex-item">Other Email</button>
+
+    <button class="flex-item" (click)="openMobileDialog()">Mobile Phone</button>
+  </div>
+
+  <div class="jumbotron" *ngIf="loginsuccess" style="height: 380px">
+    <form
+      [formGroup]="contactform"
+      id="contactform"
+      (ngSubmit)="onSubmit(this.contactform.value)"
+      class="flex-container"
+    >
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input
+          id="contactname"
+          matInput
+          type="text"
+          placeholder="Enter Valid Name"
+          formControlName="contactname"
+        />
+        <mat-error
+          *ngIf="contactform.controls['contactname']?.errors?.['required']"
+        >
+          > Required field!.. can not be blank.
+        </mat-error>
+      </mat-form-field>
+
+      <br />
+      <mat-form-field appearance="outline">
+        <mat-label>Contact Mobile No.</mat-label>
+        <input
+          id="contactphone"
+          matInput
+          type="text"
+          placeholder="Enter Valid Mobile No."
+          formControlName="contactphone"
+        />
+        <mat-error
+          *ngIf="contactform.controls['contactphone']?.errors?.['required']"
+        >
+          Required field!.. can not be blank.
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <address></address>
+        <input
+          id="contactemail"
+          matInput
+          type="text"
+          placeholder="Enter Valid Email Address"
+          formControlName="contactemail"
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="outline">
+        <mat-label>Enter Message</mat-label>
+        <input
+          id="contactmessage"
+          matInput
+          type="text"
+          placeholder="Enter Message"
+          formControlName="contactmessage"
+        />
+        <mat-error
+          *ngIf="contactform.controls['contactmessage']?.errors?.['required']"
+        >
+          Required field!.. can not be blank.
+        </mat-error>
+      </mat-form-field>
+      <br />
+    </form>
+    <button
+      type="submit"
+      mat-raised-button
+      class="btn-submit"
+      (click)="onSubmit(this.contactform.value)"
+    >
+      Submit
+    </button>
+  </div>
+
+  <!-- After successfull login following form will open -->
+  <!-- <div class="flex-container">
+      <form
+        [formGroup]="contactform"
+        id="contactform"
+        (ngSubmit)="onSubmit(this.contactform.value)"
+      >
+        <mat-form-field appearance="outline">
+          <mat-label>School Key</mat-label>
+          <input
+            id="schoolkey"
+            matInput
+            type="text"
+            placeholder="Enter Valid Schoolkey"
+            formControlName="schoolkey"
+          />
+          <mat-error
+            *ngIf="contactform.controls['schoolkey']?.errors?.['required']"
+          >
+            > Required field!.. can not be blank.
+          </mat-error>
+        </mat-form-field>
+
+        <br />
+        <button
+          type="submit"
+          mat-raised-button
+          class="btn-submit"
+          (click)="onSubmit(this.contactform.value)"
+        >
+          Submit
+        </button>
+      </form>
+    </div> -->
+</div>

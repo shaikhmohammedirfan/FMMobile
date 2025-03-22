@@ -1,0 +1,65 @@
+<div
+  id="login"
+  class="bounceIn-card login-card"
+  style="margin-top: 100px"
+  *ngIf="gymname"
+>
+  <button
+    class="closeBtnRight"
+    mat-button
+    mat-dialog-close
+    (click)="closeForm()"
+  >
+    X
+  </button>
+  <br />
+  <h2>Welcome to {{ gymname }}</h2>
+
+  <br />
+  <div class="flex-container">
+    <form
+      id="frmMemberLogin"
+      [formGroup]="frmMemberLogin"
+      (ngSubmit)="onFormSubmit(this.frmMemberLogin.value)"
+    >
+      <mat-form-field appearance="outline">
+        <mat-label>Valid Member Key</mat-label>
+        <input
+          id="memberkey"
+          matInput
+          type="text"
+          placeholder="Enter Valid Member key"
+          formControlName="memberkey"
+        />
+        <mat-hint>Enter Membership Key...</mat-hint>
+        <mat-error
+          *ngIf="frmMemberLogin.controls['memberkey']?.errors?.['required']"
+        >
+          Required field!.. can not be blank.
+        </mat-error>
+      </mat-form-field>
+
+      <br />
+      <br />
+      <button
+        type="submit"
+        mat-raised-button
+        class="btn-submit"
+        (click)="onFormSubmit(this.frmMemberLogin.value)"
+      >
+        Submit
+      </button>
+
+      <div *ngIf="error" style="color: red">
+        <strong>Error:</strong> {{ this.error }}
+      </div>
+
+      <div *ngIf="loader.isLoading | async">
+          <mat-progress-bar
+          mode="indeterminate"
+          class="loader-container"
+        ></mat-progress-bar>
+      </div>
+    </form>
+  </div>
+</div>

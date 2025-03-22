@@ -1,0 +1,13 @@
+<div *ngIf="loader.isLoading | async">
+    <mat-progress-bar
+    mode="indeterminate"
+    class="loader-container"
+  ></mat-progress-bar>
+</div>
+
+<p class="pageTitle" *ngIf="savedItems.length > 0">
+  Saved For Later ({{ this.savedItems.length }} items)
+</p>
+<p>
+  <app-savedcard [savedItemArray]="savedItems"></app-savedcard>
+</p>

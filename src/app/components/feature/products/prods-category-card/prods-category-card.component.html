@@ -1,0 +1,30 @@
+<div style="margin-top: 90px" class="flex-container">
+  <button title="Sort" (click)="sort()">Sort</button>
+
+  <button data-toggle="tooltip" title="Filter" (click)="filter()">
+    Filter
+  </button>
+</div>
+<br />
+<div class="flex-container">
+  @for (category of categoryArray; track category; let i = $index) {
+  <div
+    class="flex-card"
+    (click)="getProdsByCategoryByRange(category[0].category_code, $event)"
+  >
+    <div class="card-header">
+      <img
+        width="73px"
+        height="73px"
+        [src]="category[0].imageurl"
+        alt="picture"
+      />
+    </div>
+
+    <div class="card-content">
+      {{ category[0].description }}
+    </div>
+  </div>
+
+  }
+</div>

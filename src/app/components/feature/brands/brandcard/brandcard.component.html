@@ -1,0 +1,43 @@
+<div style="text-align: center">
+  @if (loader.isLoading | async) {
+  <div style="margin-top: 90px">
+      <mat-progress-bar
+      mode="indeterminate"
+      class="loader-container"
+    ></mat-progress-bar>
+  </div>
+  }
+
+  <div style="margin-top: 90px" class="flex-container">
+    <button title="Sort" (click)="sort()">Sort</button>
+
+    <button data-toggle="tooltip" title="Filter" (click)="filter()">
+      Filter
+    </button>
+  </div>
+  <br />
+
+  <div class="flex-container">
+    @for (brand of brandsArray; track brand; let i = $index) {
+    <!-- <div class="flex-card" (click)="prodByBrand(brand[0].brandid, $event)"> -->
+    <div
+      class="flex-card"
+      (click)="getProdsByBrandByRange(brand[0].brandid, $event)"
+    >
+      <div class="card-header">
+        <img
+          width="73px"
+          height="73px"
+          [src]="brand[0].brandlogo"
+          alt="picture"
+        />
+      </div>
+
+      <div class="card-content">
+        {{ brand[0].brandname }}
+      </div>
+    </div>
+
+    }
+  </div>
+</div>

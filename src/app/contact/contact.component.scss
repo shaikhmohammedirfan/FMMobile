@@ -1,0 +1,79 @@
+// mat-card {
+//   background-image: linear-gradient(160deg, #000000 20%, #313335 74%);
+//   // background-color: transparent;
+//   width: 90%;
+//   height: 60px;
+//   border: solid 1px;
+//   border-color: wheat;
+//   margin-top: 90px;
+
+//   text-align: center;
+// }
+
+// mat-card-title {
+//   font-size: 30px;
+// }
+
+.jumbotron {
+  height: 250px;
+}
+.flex-container {
+  margin-top: 5px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-item {
+  width: 125px;
+  height: 45px;
+  font-size: 12px;
+}
+
+.closeBtnRight {
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+}
+
+// mat-form-field local form related code with ::ng-deep
+::ng-deep .mdc-notched-outline__leading {
+  border-color: rgba(243, 236, 236, 0.445) !important;
+}
+::ng-deep .mdc-notched-outline__notch {
+  border-color: rgba(243, 236, 236, 0.445) !important;
+}
+::ng-deep .mdc-notched-outline__trailing {
+  border-color: rgba(243, 236, 236, 0.445) !important;
+}
+// Color of item selected using mat-select
+::ng-deep .mat-mdc-select-value {
+  border-color: rgba(243, 236, 236, 0.445) !important;
+}
+// Floating label text color
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  border-color: rgba(243, 236, 236, 0.445) !important;
+}
+
+::ng-deep .mat-mdc-select-arrow {
+  border-color: rgba(243, 236, 236, 0.445) !important;
+}
+
+::ng-deep .mdc-text-field .mdc-text-field__input {
+  border-color: rgba(243, 236, 236, 0.445) !important;
+}
+
+@media screen and (max-width: 700px) {
+  // For small screens
+  /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version.*/
+  mat-card {
+    width: 80%;
+  }
+  /* TODO(mdc-migration): The following rule targets internal classes of card that may no longer apply for the MDC version.*/
+  mat-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+}

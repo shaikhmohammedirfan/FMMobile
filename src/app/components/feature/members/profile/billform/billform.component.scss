@@ -1,0 +1,38 @@
+// mat-mdc-card-title {
+//   display: flex;
+//   justify-content: center; /* align horizontal */
+//   align-items: center; /* align vertical */
+//   margin-top: 3px;
+//   margin-bottom: 10px;
+//   color: rgb(0, 0, 0);
+
+//   font-size: 12px;
+//   font-weight: bold;
+//   line-height: 1.2;
+//   font-weight: 100;
+// }
+
+// .mat-mdc-card ::ng-deep {
+//   .mat-mdc-card-header-text .mat-mdc-card-title {
+//     color: blue;
+//   }
+// }
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(160deg, rgb(31, 6, 16) 40%, #121213 74%);
+}
+
+.jumbotron {
+  background: linear-gradient(160deg, rgb(31, 6, 16) 40%, #121213 74%);
+  border: none;
+}
+
+// .flex-container > div {
+//   width: 200px;
+//   margin: 10px;
+//   text-align: center;
+//   line-height: 75px;
+//   font-size: 12px;
+// }

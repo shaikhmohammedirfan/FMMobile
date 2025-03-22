@@ -1,0 +1,138 @@
+<div class="jumbotron">
+  <button
+    mat-mini-fab
+    matTooltip="Open Gym Page"
+    color="basic"
+    (click)="start()"
+    style="padding-top: 20px"
+    class="centerContent"
+  >
+    <img
+      class="responsive"
+      ngSrc="start.png"
+      alt="image"
+      width="100"
+      height="100"
+      priority
+    />
+  </button>
+  <div class="flex-container">
+    <img
+      class="responsive"
+      src="../../assets/images/fitnessMbanner.gif"
+      alt="image"
+      width="350"
+      height="280"
+      priority
+    />
+  </div>
+
+  <div class="flex-container">
+    <h4 style="font-family: MyHeadings; font-size: 16px">
+      Fitness is all about feeling great, motivated, positive, and having enough
+      energy in your body to carry out your goals and channel your energy to
+      have a happy and healthy life.
+    </h4>
+  </div>
+  <div class="flex-container">
+    <button class="flex-item" type="button" routerLink="allproducts">
+      Our Products
+    </button>
+
+    <button class="flex-item">Our Services</button>
+
+    <button class="flex-item">Contact us</button>
+  </div>
+
+  <!-- <div class="flex-container">Cart Details</div>
+
+    <app-cart></app-cart> -->
+
+  <p class="pageSubTitleMid">Hot Deals</p>
+
+  <app-hotdeals></app-hotdeals>
+  <div class="flex-container" routerLink="alldeals">
+    <button class="btnBlue">All Deals</button>
+  </div>
+
+  <br />
+  <p class="pageSubTitleMid">Top Brands</p>
+  <app-topbrands></app-topbrands>
+  <!-- <div class="flex-container">
+    <img src="../../assets/images/nike.jpg" />
+    <img src="../../assets/images/adidasLogo.png" />
+    <img src="../../assets/images/converseLogo.png" />
+    <img src="../../assets/images/pumaLogo.png" />
+    <img src="../../assets/images/underArmLogo.png" /> 
+  </div>-->
+
+  <div class="flex-container" routerLink="allbrands">
+    <button class="btnBlue">All Brands</button>
+  </div>
+
+  <div class="flex-container" routerLink="allCategories">
+    <button class="btnBlue" routerLink="/allCategories">All Categories</button>
+  </div>
+  <div class="flex-container">
+    <button class="btnBlue">Discounts For You</button>
+  </div>
+
+  <p class="pageSubTitleMid" style="margin-bottom: 30%">Trending</p>
+  <div class="scrollmenu text-center thumbnails">
+    <app-productsonoffer></app-productsonoffer>
+  </div>
+</div>
+<!-- <ng-template #nogymname>
+  <div
+    class="card centerContent"
+    style="margin-top: 125px; color: rgb(255, 72, 0)"
+  >
+    Required Information Not Found! Please Login
+  </div>
+</ng-template> -->
+
+<!-- <div class="jumbotron flex-container">
+  <button
+    mat-mini-fab
+    color="basic"
+    (click)="start()"
+    style="padding-top: 70px"
+  >
+    <img
+      class="responsive"
+      ngSrc="start.png"
+      alt="image"
+      width="100"
+      height="100"
+      priority
+    />
+  </button>
+
+  <img
+    class="responsive"
+    ngSrc="flightsbanner.gif"
+    alt="image"
+    width="350"
+    height="250"
+    priority
+  />
+  &nbsp;
+  <h4>
+    Fitness is all about feeling great, motivated, positive, and having enough
+    energy in your body to carry out your goals and channel your energy to have
+    a happy and healthy life.
+  </h4>
+  <br />
+
+  <div class="flex-container">
+    <button class="flex-item" type="button">Our Products</button>
+
+    <button class="flex-item">Our Services</button>
+
+    <button class="flex-item">Contact us</button>
+
+   
+  </div>
+
+  <h2>Hot Deals</h2>
+</div> -->

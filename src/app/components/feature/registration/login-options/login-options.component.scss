@@ -1,0 +1,39 @@
+.closeBtnRight {
+  float: right;
+  width: 25px;
+  height: 20px;
+}
+
+span {
+  margin: 10px;
+}
+
+.flex-container {
+  // padding: 0;
+  // margin: 0;
+  // list-style: none;
+
+  // display: -webkit-box;
+  // display: -moz-box;
+  // display: -ms-flexbox;
+  // display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// .flex-item {
+//   background: rgb(105, 68, 61);
+//   padding: 5px;
+//   width: 60px;
+//   height: 35px;
+//   margin: 3px;
+
+//   color: white;
+//   font-size: 12px;
+//   line-height: 1.5;
+//   text-align: center;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+// }

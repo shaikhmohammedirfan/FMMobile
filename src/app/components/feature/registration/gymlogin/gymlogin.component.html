@@ -1,0 +1,49 @@
+<div id="login" class="bounceIn-card login-card" style="margin-top: 100px">
+  <button
+    class="closeBtnRight"
+    mat-button
+    mat-dialog-close
+    (click)="closeForm()"
+  >
+    X
+  </button>
+  <br />
+  <h2 style="color: black">Verify Your Gym</h2>
+  <br />
+  <div class="flex-container">
+    <form
+      id="frmGymLogin"
+      [formGroup]="frmGymLogin"
+      (ngSubmit)="onFormSubmit(this.frmGymLogin.value)"
+    >
+      <mat-form-field appearance="outline">
+        <mat-label>Enter Gym Key</mat-label>
+        <input
+          id="gymkey"
+          matInput
+          type="text"
+          placeholder="Enter Valid Gym key"
+          formControlName="gymkey"
+        />
+        <mat-hint>Enter Gym Key...</mat-hint>
+        <mat-error *ngIf="frmGymLogin.controls['gymkey']?.errors?.['required']">
+          Required field!.. can not be blank.
+        </mat-error>
+      </mat-form-field>
+
+      <br />
+      <button
+        type="submit"
+        mat-raised-button
+        class="btn-submit"
+        (click)="onFormSubmit(this.frmGymLogin.value)"
+      >
+        Submit
+      </button>
+
+      <div *ngIf="error" style="color: red">
+        <strong>Error:</strong> {{ this.error }}
+      </div>
+    </form>
+  </div>
+</div>

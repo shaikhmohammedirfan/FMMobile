@@ -1,0 +1,41 @@
+@for(item of customermst;track item; let i=$index ) { @if(loader.isLoading |
+async) {
+<div>
+    <mat-progress-bar
+    mode="indeterminate"
+    class="loader-container"
+  ></mat-progress-bar>
+</div>
+}
+<mat-card
+  appearance="outlined"
+  style="
+    background-color: transparent;
+    color: white;
+    border-color: rgb(218, 216, 216);
+  "
+>
+  <div>
+    <span style="float: left"
+      ><mat-card-title> Personal Information </mat-card-title>
+    </span>
+    <span style="float: right">
+      <button class="btn-submitFIT" (click)="editCustomerMst()">
+        Edit
+      </button></span
+    >
+  </div>
+  <br />
+
+  <div class="addressClass" style="float: left">
+    Registered Mobile: <b style="font-size: 18px"> {{ item.reg_mobileno }}</b>
+    <br />
+    Regostered Email: {{ item.reg_email }}
+    <br />
+    Account Status: {{ item.account_status }}
+    <br />
+    Short Name: {{ item.shortname }}
+    <br />
+  </div>
+</mat-card>
+}
